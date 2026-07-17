@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Programming Academy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+    <header>
+
+    <div class="container">
+
+        <a href="index.html" class="logo">
+
+            <i class="fa-solid fa-code"></i>
+
+            <h2>Programming Academy</h2>
+
+        </a>
+
+        <nav>
+
+            <a href="index.html" class="active">الرئيسية</a>
+
+            <a href="courses.html">الكورسات</a>
+
+            <a href="quiz.html">الاختبارات</a>
+
+            <a href="profile.html">الملف الشخصي</a>
+
+            <a href="login.html">تسجيل الدخول</a>
+
+            <a href="register.html" class="register-btn">
+
+                إنشاء حساب
+
+            </a>
+
+<div class="header-buttons">
+
+    <button id="themeBtn" class="icon-btn">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <button id="colorBtn" class="icon-btn">
+        <i class="fa-solid fa-palette"></i>
+    </button>
+
+</div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- ==========================
+        HERO SECTION
+========================== -->
+
+
+
+
+<section class="latest-courses">
+
+    <div class="container">
+
+        <h2>أحدث الكورسات</h2>
+
+        <div id="latestCourses" class="courses-grid">
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="all-courses">
+
+    <div class="container">
+
+        <h2>جميع الكورسات</h2>
+
+        <div id="coursesContainer" class="courses-grid">
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/config.js"></script>
+
+<script src="js/all-courses.js"></script>
+
+</body>
+</html>
