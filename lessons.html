@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إدارة الدروس</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h1>إدارة دروس الكورس</h1>
+
+<button id="addLesson">
+إضافة درس
+</button>
+
+<br><br>
+
+<div id="lessonModal" class="modal" style="display:none;">
+
+    <div class="modal-content">
+
+        <h2>إضافة درس</h2>
+
+        <input
+            type="text"
+            id="lessonTitle"
+            placeholder="عنوان الدرس">
+
+        <br><br>
+
+        <input
+            type="text"
+            id="lessonVideo"
+            placeholder="رابط فيديو YouTube">
+
+        <br><br>
+
+        <input
+            type="text"
+            id="lessonDuration"
+            placeholder="مدة الدرس">
+
+        <br><br>
+
+        <input
+            type="number"
+            id="lessonOrder"
+            placeholder="ترتيب الدرس">
+
+        <br><br>
+
+        <button id="saveLesson">
+
+            حفظ
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<table border="1" width="100%">
+
+<thead>
+
+<tr>
+
+<th>الترتيب</th>
+
+<th>العنوان</th>
+
+<th>المدة</th>
+
+<th>الإجراءات</th>
+
+</tr>
+
+</thead>
+
+<tbody id="lessonsTable">
+
+</tbody>
+
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/lessons.js"></script>
+
+</body>
+
+</html>

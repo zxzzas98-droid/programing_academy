@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>لوحة التحكم | Programming Academy</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-dashboard">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="admin-sidebar">
+
+<div class="admin-logo">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+<h2>Code Academy</h2>
+
+</div>
+
+<div class="admin-profile">
+
+<img src="images/admin.png" alt="Admin">
+
+<h3>Administrator</h3>
+
+<p>System Manager</p>
+
+</div>
+
+<nav class="admin-menu">
+
+<a href="#" class="active">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+<a href="#studentsSection">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<span>Students</span>
+
+</a>
+
+<a href="#coursesSection">
+
+<i class="fa-solid fa-book-open"></i>
+
+<span>Courses</span>
+
+</a>
+
+<a href="#lessonsSection">
+
+<i class="fa-solid fa-video"></i>
+
+<span>Lessons</span>
+
+</a>
+
+<a href="#quizSection">
+
+<i class="fa-solid fa-file-circle-question"></i>
+
+<span>Quizzes</span>
+
+</a>
+
+<a href="#certificateSection">
+
+<i class="fa-solid fa-certificate"></i>
+
+<span>Certificates</span>
+
+</a>
+
+<a href="#messagesSection">
+
+<i class="fa-solid fa-envelope"></i>
+
+<span>Messages</span>
+
+</a>
+
+<a href="#settingsSection">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+<button id="logoutBtn" class="logout-btn">
+
+    <i class="fa-solid fa-right-from-bracket"></i>
+
+    تسجيل الخروج
+
+</button>
+
+<div class="sidebar-footer">
+
+Programming Academy © 2026
+
+</div>
+
+</aside>
+
+<!-- ================= Main Content ================= -->
+
+<div class="admin-content">
+
+<!-- ================= Header ================= -->
+
+<header class="admin-header">
+
+<div class="header-left">
+
+<h1>
+
+Welcome Admin 👋
+
+</h1>
+
+<p>
+
+Programming Academy Dashboard
+
+</p>
+
+</div>
+
+<div class="header-right">
+
+<div class="admin-search">
+
+<input
+
+type="text"
+
+id="searchInput"
+
+placeholder="Search Student...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="header-icons">
+
+<div class="header-icon">
+
+<i class="fa-solid fa-bell"></i>
+
+<span>3</span>
+
+</div>
+
+<div class="header-icon">
+
+<i class="fa-solid fa-envelope"></i>
+
+<span>5</span>
+
+</div>
+
+</div>
+
+<button id="themeToggle" class="theme-btn">
+    <i class="fa-solid fa-moon"></i>
+</button>
+
+<button id="customizerBtn" class="theme-btn">
+    <i class="fa-solid fa-gear"></i>
+</button>
+
+<div class="theme-customizer" id="themeCustomizer">
+
+    <div class="customizer-header">
+        <h3>تخصيص المظهر</h3>
+
+        <button id="closeCustomizer">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <h4>اللون الرئيسي</h4>
+
+    <div class="colors">
+
+        <span class="color" data-color="#2563eb"></span>
+        <span class="color" data-color="#7c3aed"></span>
+        <span class="color" data-color="#22c55e"></span>
+        <span class="color" data-color="#ef4444"></span>
+        <span class="color" data-color="#f59e0b"></span>
+        <span class="color" data-color="#06b6d4"></span>
+        <span class="color" data-color="#ec4899"></span>
+        <span class="color" data-color="#0f172a"></span>
+
+    </div>
+
+    <hr>
+
+    <button id="themeToggle" class="setting-btn">
+
+        <i class="fa-solid fa-moon"></i>
+
+        Dark Mode
+
+    </button>
+
+</div>
+
+<div class="admin-user">
+
+<img src="images/admin.png" alt="Admin">
+
+<div class="admin-user-info">
+
+<h4>Administrator</h4>
+
+<span>Super Admin</span>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- ================= Statistics ================= -->
+
+<section class="statistics-grid">
+
+<div class="stat-box">
+
+<div class="stat-info">
+
+<h2 id="totalStudents">0</h2>
+
+<p>إجمالي الطلاب</p>
+
+<div class="stat-progress">
+
+<span style="width:100%"></span>
+
+</div>
+
+<div class="stat-percent">
+
+<i class="fa-solid fa-arrow-trend-up"></i>
+
+<span>100%</span>
+
+</div>
+
+</div>
+
+<div class="stat-icon">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+</div>
+
+<div class="stat-box">
+
+<div class="stat-info">
+
+<h2 id="pendingStudents">0</h2>
+
+<p>طلبات جديدة</p>
+
+<div class="stat-progress">
+
+<span style="width:75%"></span>
+
+</div>
+
+<div class="stat-percent">
+
+<i class="fa-solid fa-clock"></i>
+
+<span>Pending</span>
+
+</div>
+
+</div>
+
+<div class="stat-icon">
+
+<i class="fa-solid fa-user-clock"></i>
+
+</div>
+
+</div>
+
+<div class="stat-box">
+
+<div class="stat-info">
+
+<h2 id="acceptedStudents">0</h2>
+
+<p>الطلاب المقبولون</p>
+
+<div class="stat-progress">
+
+<span style="width:90%"></span>
+
+</div>
+
+<div class="stat-percent">
+
+<i class="fa-solid fa-check"></i>
+
+<span>Approved</span>
+
+</div>
+
+</div>
+
+<div class="stat-icon">
+
+<i class="fa-solid fa-user-check"></i>
+
+</div>
+
+</div>
+
+<div class="stat-box">
+
+<div class="stat-info">
+
+<h2 id="rejectedStudents">0</h2>
+
+<p>الطلاب المرفوضون</p>
+
+<div class="stat-progress">
+
+<span style="width:35%"></span>
+
+</div>
+
+<div class="stat-percent">
+
+<i class="fa-solid fa-xmark"></i>
+
+<span>Rejected</span>
+
+</div>
+
+</div>
+
+<div class="stat-icon">
+
+<i class="fa-solid fa-user-xmark"></i>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Dashboard Grid ================= -->
+
+<section class="dashboard-grid">
+
+<div class="chart-box">
+
+<div class="chart-header">
+
+<h2>
+
+عدد التسجيلات
+
+</h2>
+
+<select>
+
+<option>آخر 7 أيام</option>
+
+<option>آخر شهر</option>
+
+<option>آخر سنة</option>
+
+</select>
+
+</div>
+
+<div class="chart-body">
+
+<canvas id="studentsChart"></canvas>
+
+</div>
+
+</div>
+
+<div class="latest-box">
+
+<h2>
+
+أحدث الطلاب
+
+</h2>
+
+<ul class="latest-list" id="latestStudents">
+
+<li>
+
+<div class="latest-user">
+
+<img src="images/student.png">
+
+<div>
+
+<h4>Loading...</h4>
+
+<span>Student</span>
+
+</div>
+
+</div>
+
+<span class="latest-status pending">
+
+Pending
+
+</span>
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ================= Students Table ================= -->
+
+<section class="table-container" id="studentsSection">
+
+    <div class="table-header">
+
+        <h2>
+
+            <i class="fa-solid fa-user-graduate"></i>
+
+            إدارة الطلاب
+
+        </h2>
+
+        <div class="table-search">
+
+            <input
+                type="text"
+                id="studentSearch"
+                placeholder="ابحث باسم الطالب أو الإيميل">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </div>
+
+    </div>
+
+    <div class="table-responsive">
+
+        <table class="students-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>الطالب</th>
+
+                    <th>الإيميل</th>
+
+                    <th>الهاتف</th>
+
+                    <th>الكورس</th>
+
+                    <th>الحالة</th>
+
+                    <th>تاريخ التسجيل</th>
+
+                    <th>التحكم</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="studentsTable">
+
+                <tr>
+
+                    <td colspan="8">
+
+                        <div class="loading"></div>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="table-footer">
+
+        <p>
+
+            إجمالي الطلاب :
+
+            <span id="studentsCount">
+
+                0
+
+            </span>
+
+        </p>
+
+        <div class="pagination">
+
+            <button>
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </button>
+
+            <button class="active">
+
+                1
+
+            </button>
+
+            <button>
+
+                2
+
+            </button>
+
+            <button>
+
+                3
+
+            </button>
+
+            <button>
+
+                <i class="fa-solid fa-angle-left"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= Courses ================= -->
+
+<section
+class="table-container"
+id="coursesSection">
+
+    <div class="table-header">
+
+        <h2>
+
+            <i class="fa-solid fa-book-open"></i>
+
+            إدارة الكورسات
+
+        </h2>
+
+        <button class="accept" >
+
+            <i class="fa-solid fa-plus"></i>
+
+          <a href="courses.html"> كورس</a> 
+
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        سيتم ربط الكورسات بقاعدة البيانات لاحقًا.
+
+    </div>
+
+</section>
+
+<!-- ================= Lessons ================= -->
+
+<section
+class="table-container"
+id="lessonsSection">
+
+    <div class="table-header">
+
+        <h2>
+
+            <i class="fa-solid fa-video"></i>
+
+            إدارة الدروس
+
+        </h2>
+
+        <button class="accept">
+
+            <i class="fa-solid fa-plus"></i>
+
+            إضافة درس
+
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        سيتم ربط الدروس لاحقًا.
+
+    </div>
+
+</section>
+
+<!-- ================= Quiz ================= -->
+
+<section
+class="table-container"
+id="quizSection">
+
+    <div class="table-header">
+
+        <h2>
+
+            <i class="fa-solid fa-file-circle-question"></i>
+
+            إدارة الاختبارات
+
+        </h2>
+
+        <button class="accept">
+
+            <i class="fa-solid fa-plus"></i>
+
+            إضافة اختبار
+
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        سيتم ربط الاختبارات بقاعدة البيانات.
+
+    </div>
+
+</section>
+
+<!-- ================= Certificates ================= -->
+
+<section
+class="table-container"
+id="certificateSection">
+
+    <div class="table-header">
+
+        <h2>
+
+            <i class="fa-solid fa-certificate"></i>
+
+            إدارة الشهادات
+
+        </h2>
+
+    </div>
+
+    <div class="card">
+
+        سيتم إضافة الشهادات لاحقًا.
+
+    </div>
+
+</section>
+
+<!-- ================= Messages ================= -->
+
+<section
+class="table-container"
+id="messagesSection">
+
+    <div class="table-header">
+
+        <h2>
+
+            <i class="fa-solid fa-envelope"></i>
+
+            الرسائل
+
+        </h2>
+
+    </div>
+
+    <div class="card">
+
+        لا توجد رسائل حاليًا.
+
+    </div>
+
+</section>
+
+<!-- ================= Settings ================= -->
+
+<section
+class="table-container"
+id="settingsSection">
+
+    <div class="table-header">
+
+        <h2>
+
+            <i class="fa-solid fa-gear"></i>
+
+            الإعدادات
+
+        </h2>
+
+    </div>
+
+    <div class="card">
+
+        سيتم إضافة إعدادات الموقع لاحقًا.
+
+    </div>
+
+</section>
+
+
+<!-- ================= Student Modal ================= -->
+
+<div class="modal" id="studentModal">
+
+    <div class="modal-content">
+
+        <button id="closeModal" class="close-btn">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>بيانات الطالب</h2>
+
+        <div class="modal-info">
+
+            <p>
+                <strong>الاسم :</strong>
+                <span id="mName"></span>
+            </p>
+
+            <p>
+                <strong>الإيميل :</strong>
+                <span id="mEmail"></span>
+            </p>
+
+            <p>
+                <strong>الهاتف :</strong>
+                <span id="mPhone"></span>
+            </p>
+
+            <p>
+                <strong>الكورس :</strong>
+                <span id="mCourse"></span>
+            </p>
+
+            <p>
+                <strong>الحالة :</strong>
+                <span id="mStatus"></span>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+
+
+
+
+<script src="js/admin.js"></script>
+</body>
+</html>
