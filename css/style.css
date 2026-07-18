@@ -5092,3 +5092,189 @@ button {
         padding: 20px;
     }
 }
+/* استيراد خط القاهرة */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* الخلفية الداكنة الموحدة */
+    color: #f8fafc;
+    direction: rtl; /* دعم كامل للغة العربية */
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* الحاوية الرئيسية بتقسيم Grid (فيديو + قائمة جانبية) */
+.course-container {
+    display: grid;
+    grid-template-columns: 1fr 300px; /* الفيديو ياخد المساحة الأكبر وقائمة الدروس 300 بكسل */
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ==================== جزء الفيديو الرئيسي ==================== */
+.video-section {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+#courseTitle {
+    color: #38bdf8; /* أزرق سماوي */
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#courseDescription {
+    color: #94a3b8;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* مشغل الفيديو (iframe) متجاوب وحواف دائرية */
+#videoPlayer {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* يحافظ على أبعاد الفيديو القياسية */
+    border: none;
+    border-radius: 12px;
+    background-color: #000;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* أزرار التنقل بين الدروس (السابق والتالي) */
+.lesson-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.lesson-buttons button {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #334155;
+    color: #f8fafc;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lesson-buttons button:hover {
+    background-color: #475569;
+    border-color: #64748b;
+}
+
+/* زر ابدأ الاختبار */
+#quizBtn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background-color: #fbbf24; /* لون ذهبي مميز للاختبارات */
+    color: #0f172a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#quizBtn:hover {
+    background-color: #f59e0b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+}
+
+/* ==================== شريط نسبة التقدم ==================== */
+#progressText {
+    color: #38bdf8;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: left; /* النسبة تظهر بوضوح في اليسار */
+}
+
+.progress {
+    width: 100%;
+    height: 10px;
+    background-color: #0f172a;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    margin-bottom: 20px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%; /* بيتحكم فيها الـ JS */
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+/* ==================== القائمة الجانبية للدروس ==================== */
+.sidebar {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto; /* لعمل سكرول لو الدروس كتيرة */
+}
+
+.sidebar h2 {
+    font-size: 1.3rem;
+    color: #f8fafc;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 10px;
+}
+
+/* الدروس الفردية اللي بتنزل من الـ JS */
+#lessonsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ستايل افتراضي لعناصر الدروس (عدّله في ملف الـ JS لو بتستخدم كلاسات معينة) */
+#lessonsList div, .lesson-item {
+    padding: 12px;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+#lessonsList div:hover, .lesson-item:hover {
+    border-color: #38bdf8;
+    background-color: #1e293b;
+}
+
+/* ==================== التوافق مع الشاشات (Responsive) ==================== */
+@media (max-width: 968px) {
+    /* في الموبايل والتابلت الشاشة تترتب تحت بعض بدل جنب بعض */
+    .course-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        max-height: none; /* إلغاء الطول المحدد في الموبايل */
+    }
+}
