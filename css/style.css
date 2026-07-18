@@ -4830,3 +4830,108 @@ body.dark a{
 
 }
 
+/* استيراد خط جير مريح وعصري لقراءة اللغة العربية */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* خلفية داكنة مريحة وعصرية */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* لجعل الصندوق في منتصف الشاشة بالظبط */
+    padding: 20px;
+    direction: rtl; /* دعم القراءة من اليمين لليسار */
+}
+
+/* تصميم الصندوق الرئيسي (Pending Box) */
+.pending-box {
+    background-color: #1e293b; /* لون الكارت */
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease-out; /* تأثير ظهور هادئ عند فتح الصفحة */
+}
+
+/* تأثير حركة للإيموجي (الساعة الرملية) تدل على الانتظار */
+.pending-box h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* عنوان: تم إنشاء الحساب بنجاح */
+.pending-box h2 {
+    color: #38bdf8; /* لون أزرق سماوي مبهج للنجاح */
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* نص: يرجى انتظار موافقة الإدارة */
+.pending-box p {
+    color: #94a3b8; /* لون رمادي هادئ */
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* ستايل خاص بحالة التحقق (جارٍ التحقق...) */
+#status {
+    background-color: #0f172a;
+    color: #fbbf24; /* لون برتقالي/أصفر يدل على المعالجة المستمرة */
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1px solid #334155;
+    margin-bottom: 0; /* إلغاء الهامش السفلي لأخر عنصر */
+}
+
+/* التأثيرات الحركية (Animations) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* التوافق مع الشاشات الصغيرة جداً (الموبايل) */
+@media (max-width: 480px) {
+    .pending-box {
+        padding: 30px 20px;
+    }
+    .pending-box h2 {
+        font-size: 1.4rem;
+    }
+    .pending-box p {
+        font-size: 1rem;
+    }
+}
