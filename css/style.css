@@ -4935,3 +4935,160 @@ body {
         font-size: 1rem;
     }
 }
+
+/* استيراد خط القاهرة العصري */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* الخلفية الداكنة الموحدة للمنصة */
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    direction: rtl; /* دعم كامل للغة العربية */
+}
+
+/* الكارت الرئيسي للوحة الطالب */
+.student-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 30px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* اسم الطالب */
+#studentName {
+    color: #38bdf8; /* اللون الأزرق السماوي المميز */
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 15px;
+}
+
+/* حاوية الإحصائيات (الـ Boxes) */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* تقسيم لـ 3 أعمدة متساوية */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* تصميم صناديق الإحصائيات الفردية */
+.stats .box {
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stats .box:hover {
+    transform: translateY(-3px);
+    border-color: #38bdf8;
+}
+
+.stats .box h2 {
+    font-size: 1.5rem;
+    color: #f8fafc;
+    margin-bottom: 5px;
+}
+
+.stats .box p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* قسم الشهادات */
+.stats h2:last-of-type {
+    grid-column: span 3; /* يمتد على كامل العرض */
+    font-size: 1.3rem;
+    color: #fbbf24; /* لون ذهبي يليق بالبطولات والشهادات */
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-right: 4px solid #fbbf24;
+    padding-right: 10px;
+}
+
+#certificatesList {
+    grid-column: span 3;
+    background-color: #0f172a;
+    border-radius: 12px;
+    padding: 15px;
+    min-height: 60px;
+    border: 1px dashed #334155;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* تصميم الأزرار (Buttons) */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 15px;
+}
+
+/* زر الكورسات */
+#coursesBtn {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+#coursesBtn:hover {
+    background-color: #7dd3fc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+}
+
+/* زر تسجيل الخروج */
+#logoutBtn {
+    background-color: transparent;
+    color: #ef4444; /* لون أحمر */
+    border: 1px solid #ef4444;
+}
+
+#logoutBtn:hover {
+    background-color: #ef4444;
+    color: #ffffff;
+}
+
+/* تأثير الظهور الهادئ للوحة */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* التوافق مع الشاشات الصغيرة (الموبايل) */
+@media (max-width: 500px) {
+    .stats {
+        grid-template-columns: 1fr; /* تحويل الإحصائيات لطابور رأسي في الموبايل */
+    }
+    .stats h2:last-of-type, #certificatesList {
+        grid-column: span 1;
+    }
+    .student-card {
+        padding: 20px;
+    }
+}
